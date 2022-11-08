@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sample-netcore
+  name: sample-netcore
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: sample-netcore
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sample-netcore
+    spec:
+      containers:
+      - image: docker.io/167235042/sample-netcore
+        name: sample-netcore
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 8080 
+status: {}
